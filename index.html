@@ -373,20 +373,20 @@
   }
 
   @media (max-width: 480px) {
-    .stage { padding: 8px 20px 4px; }
-    .kicker { font-size: 10px; letter-spacing: 0.24em; }
-    h1 { font-size: clamp(22px, 7.5vw, 30px); margin: 3px 0 4px; }
-    .lede { font-size: 12.5px; line-height: 1.4; margin: 0 0 8px; max-width: 280px; }
-    .levels { gap: 6px; margin-bottom: 8px; }
-    .chip { padding: 4px 10px 4px 8px; font-size: 11px; }
+    .stage { padding: 22px 20px 22px; }
+    .kicker { font-size: 10px; letter-spacing: 0.26em; }
+    h1 { font-size: clamp(24px, 8vw, 32px); margin: 8px 0 10px; }
+    .lede { font-size: 13.5px; line-height: 1.6; margin: 0 0 18px; max-width: 280px; }
+    .levels { gap: 6px; margin-bottom: 18px; }
+    .chip { padding: 5px 10px 5px 8px; font-size: 11px; }
     .card-wrap {
-      margin-bottom: 6px;
+      margin-bottom: 16px;
       width: min(78vw, 300px);
       height: min(109.2vw, 420px);
     }
-    .draw-btn { padding: 7px 22px; font-size: 13px; }
-    .progress { margin-top: 4px; }
-    .reset { margin-top: 4px; }
+    .draw-btn { padding: 10px 24px; font-size: 13.5px; }
+    .progress { margin-top: 10px; }
+    .reset { margin-top: 12px; }
   }
 
   @media (max-width: 360px) {
@@ -536,7 +536,7 @@
       '你覺得自己值得被好好愛嗎？為什麼？',
       '你最近一次說謊是為了什麼？'
     ]},
-    { id: 5, name: '夜語', tagline: 'Honest・Playful・Closer', color: '#4F3E73', questions: [
+    { id: 5, name: '夜語', tagline: 'Honest・Playful・Closer', color: '#4F3E73', defaultOff: true, questions: [
       '聊到現在，你對我的印象有什麼變化？',
       '哪一題最難回答？為什麼？',
       '哪一題你最想反問我？',
@@ -561,7 +561,7 @@
   ];
 
   var active = {};
-  LEVELS.forEach(function (lv) { active[lv.id] = !lv.bonus; });
+  LEVELS.forEach(function (lv) { active[lv.id] = !lv.defaultOff; });
 
   var deck = [];
   var pointer = 0;
